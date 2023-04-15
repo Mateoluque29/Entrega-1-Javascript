@@ -65,7 +65,7 @@ do {
 } while (operacion != SALIR); 
 
 */
-
+/*
 let nombre;
 let altura;
 let peso;
@@ -95,7 +95,9 @@ imc = (peso / (altura * altura));
                 resultadoImc = 'Obesidad de segundo grado';
                 
                 }else{
-                    resultadoImc = 'No valido'
+                    if(imc < 40){
+                        resultadoImc = 'Obesidad de tercer grado'
+                    }
                 }
             }    
         }
@@ -104,4 +106,116 @@ imc = (peso / (altura * altura));
     alert('El resultado de su IMC es ' + resultadoImc)
     reintentar = prompt('Desea reintentar? Si / No')
 }while(reintentar == 'si');
+*/
 
+let nombre;
+let eleccion;
+let comida;
+let altura;
+let peso;
+let imc;
+let resultadoImc;
+let reintentar;
+
+let proteina
+let kcal
+
+
+nombre = prompt('Ingrese su nombre');
+eleccion = prompt('Hola ' + nombre + ' si quiere ingresar a la Calculadora de IMC escriba IMC. Si quiere saber valores nutricionales de los alimentos, escriba alimentos');
+
+if(eleccion == 'imc'){
+    do{
+        peso = Number(prompt('Hola ' + nombre + ', especifique su peso en kilogramos'));
+        altura= Number(prompt('Especifique su altura en metros (ejemplo: 1.70)'));
+        imc = (peso / (altura * altura));
+        
+            if (imc <= 24.9){
+            resultadoImc = 'Normal';
+            } else {
+                if(imc <= 29.9){
+                resultadoImc = 'Sobrepeso';
+                } else {
+                    if(imc <= 34.9){
+                    resultadoImc = 'Obesidad de primer grado';
+                    } else {
+                        if(imc <= 40){  
+                        resultadoImc = 'Obesidad de segundo grado';
+                        
+                        }else{
+                            if(imc < 40){
+                                resultadoImc = 'Obesidad de tercer grado'
+                            }
+                        }
+                    }    
+                }
+            } 
+            
+            alert('El resultado de su IMC es ' + resultadoImc)
+            reintentar = prompt('Desea reintentar? Si / No')
+        }while(reintentar == 'si');
+}else{
+    do{
+        comida = Number (prompt('Elija el numero del alimento que desea saber sus valores nutricionales'+ '\n' +
+    '1- Leche semidescremada (2%)'+ '\n' +
+    '2- Yogur natural' + '\n' +
+    '3- Quesos blandos'+ '\n' +
+    '4- Huevo entero' + '\n' +
+    '5- Cereales'+ '\n' +
+    '6- Legumbres'+ '\n' +
+    '7- Pan Frances'+ '\n' +
+    '8- Frutas Secas'))
+
+    if(comida == 1){
+        alert('250ml de leche semidescremada tiene:'+ '\n' +
+        'Proteina: 7,5g'+ '\n' +
+        'Kilocalorias: 125')
+    }else{
+        if(comida == 2){
+            alert('200ml de yogur natural tiene:'+ '\n' +
+            'Proteina: 6g'+ '\n' +
+            'Kilocalorias: 118')
+        }else{
+            if(comida == 3){
+            alert('70g de queso blando tiene:'+ '\n' +
+            'Proteina: 14g'+ '\n' +
+            'Kilocalorias: 182')
+            }else{
+                if(comida == 4){
+                    alert('6 huevos enteros tiene:'+ '\n' +
+            'Proteina: 36g'+ '\n' +
+            'Kilocalorias: 468')
+                }else{
+                    if(comida == 5){
+                        alert('240g de cereales tiene:'+ '\n' +
+                        'Proteina: 24g'+ '\n' +
+                        'Kilocalorias: 768')
+                    }else{
+                        if(comida == 6){
+                            alert('80g de legumbres tiene:'+ '\n' +
+                            'Proteina: 16g'+ '\n' +
+                            'Kilocalorias: 224')
+                        }else{
+                            if(comida == 7){
+                                alert('127g de pan frances tiene:'+ '\n' +
+                                'Proteina: 12g'+ '\n' +
+                                'Kilocalorias: 336')
+                            }else{
+                                if(comida == 8){
+                                    alert('30g de frutas secas tiene:'+ '\n'+
+                                'Proteina: 5,4g'+ '\n' +
+                                'Kilocalorias: 187,5')
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+
+    reintentar = prompt('Desea reintentar? Si / No')
+    }while(reintentar == 'si');
+    
+    }
