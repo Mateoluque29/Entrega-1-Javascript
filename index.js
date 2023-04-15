@@ -120,9 +120,16 @@ let reintentar;
 let proteina
 let kcal
 
-
 nombre = prompt('Ingrese su nombre');
+if(nombre != ''){
+do{
 eleccion = prompt('Hola ' + nombre + ' si quiere ingresar a la Calculadora de IMC escriba IMC. Si quiere saber valores nutricionales de los alimentos, escriba alimentos');
+}while(nombre != '')
+}else{
+    alert ('No ingreso un nombre')
+    nombre = prompt('Ingrese su nombre');
+    eleccion = prompt('Hola ' + nombre + ' si quiere ingresar a la Calculadora de IMC escriba IMC. Si quiere saber valores nutricionales de los alimentos, escriba alimentos');
+}
 
 if(eleccion == 'imc'){
     do{
